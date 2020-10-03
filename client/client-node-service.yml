@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: client-service
+
+spec:
+  type: NodePort
+  ports:
+    - port: 3000 #port is used for other pod to communicate with this pod in this example its not compulsory to use
+      targetPort: 3000 
+      #nodePort: 31515 #30000-32767 outside world connect to this port
+  selector:
+    component: web

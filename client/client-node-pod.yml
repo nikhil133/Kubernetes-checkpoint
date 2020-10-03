@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: client-pod
+  labels:
+    component: web
+
+spec:
+  containers:
+    - name: client
+      #making update to pod replacing new container worker
+      #image: nikhil133/checkpoint-client-k8
+      image: nikhil133/checkpoint-worker
+      ports:
+        - containerPort: 3000
